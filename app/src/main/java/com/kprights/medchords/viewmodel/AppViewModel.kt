@@ -1,9 +1,8 @@
-package com.kprights.infosys.newsfeed.viewmodel
+package com.kprights.medchords.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
-import com.kprights.medchords.viewmodel.AppRepository
 
 
 /**

@@ -1,4 +1,4 @@
-package com.kprights.infosys.newsfeed.viewmodel
+package com.kprights.medchords.viewmodel
 
 
 /**
