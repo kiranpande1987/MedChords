@@ -1,60 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/txtB1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#FF0000"
-        android:layout_marginStart="4dp"
-        android:text="B1"
-        app:layout_constraintBottom_toTopOf="@id/txtB3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/txtB2"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-    <TextView
-        android:id="@+id/txtB2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="4dp"
-        android:background="#00FF00"
-        android:text="B2"
-        android:layout_marginEnd="4dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtB1"
-        app:layout_constraintBottom_toTopOf="@id/txtB3" />
+        <variable
+            name="viewModel"
+            type="com.kprights.medchords.viewmodel.AppViewModel" />
+    </data>
 
-    <TextView
-        android:id="@+id/txtB3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="4dp"
-        android:background="#0000FF"
-        android:text="B3"
-        app:layout_constraintTop_toBottomOf="@+id/txtB1"
-        app:layout_constraintStart_toStartOf="@id/txtB1"
-        app:layout_constraintEnd_toEndOf="@id/txtB1"
-        app:layout_constraintBottom_toBottomOf="parent"
-         />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@android:color/darker_gray"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/txtB4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#FF00FF"
-        android:text="B4"
-        android:layout_marginTop="4dp"
-        android:layout_marginStart="4dp"
-        app:layout_constraintTop_toBottomOf="@+id/txtB2"
-        app:layout_constraintStart_toEndOf="@id/txtB3"
-        app:layout_constraintEnd_toEndOf="@id/txtB2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/txtB1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4dp"
+            style="@style/CardViewStyle"
+            android:layout_marginTop="4dp"
+            android:onClick='@{() -> viewModel.postTextOnButton(@string/button_b1)}'
+            app:layout_constraintBottom_toTopOf="@id/txtB3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/txtB2"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/button_b1" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/txtB2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="4dp"
+            style="@style/CardViewStyle"
+            android:layout_marginTop="4dp"
+            android:onClick='@{() -> viewModel.postTextOnButton(@string/button_b2)}'
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtB1"
+            app:layout_constraintBottom_toTopOf="@id/txtB3">
+
+            <TextView
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/button_b2" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/txtB3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="4dp"
+            style="@style/CardViewStyle"
+            android:onClick='@{() -> viewModel.postTextOnButton(@string/button_b3)}'
+            app:layout_constraintTop_toBottomOf="@+id/txtB1"
+            app:layout_constraintStart_toStartOf="@id/txtB1"
+            app:layout_constraintEnd_toEndOf="@id/txtB1"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/button_b3" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/txtB4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="4dp"
+            style="@style/CardViewStyle"
+            android:onClick='@{() -> viewModel.postTextOnButton(@string/button_b4)}'
+            app:layout_constraintTop_toBottomOf="@+id/txtB2"
+            app:layout_constraintStart_toEndOf="@id/txtB3"
+            app:layout_constraintEnd_toEndOf="@id/txtB2"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/button_b4" />
+
+        </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

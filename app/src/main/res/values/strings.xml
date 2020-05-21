@@ -3,4 +3,10 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <string name="button_b1">B1</string>
+    <string name="button_b2">B2</string>
+    <string name="button_b3">B3</string>
+    <string name="button_b4">B4</string>
+
 </resources>
